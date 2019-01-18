@@ -22,7 +22,9 @@ char **reconstruct_trip(Ticket **tickets, int length)
     i++;
   }
   route[i] = "NONE";
-  
+
+  destroy_hash_table(ht);
+
   return route;
 }
 

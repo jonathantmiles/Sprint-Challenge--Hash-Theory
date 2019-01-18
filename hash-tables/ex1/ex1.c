@@ -23,11 +23,13 @@ Answer *get_indices_of_item_weights(int *weights, int length, int limit)
       answer->index_1 = hash_table_retrieve(ht, limit - weights[answer->index_2]);
     }
   }
+  destroy_hash_table(ht);
+  free(answer);
 
   if (answer->index_1 < 0 && answer->index_2 < 0) {
     return NULL;
   }
-  free(answer);
+
   return answer;
 }
 
